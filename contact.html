@@ -3,84 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOCAL CHILLAS</title>  <!--this tag allows the developer to name the page -->
+    <title>LOCAL CHILLAS</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+
+<div class="box" style=" background-image: url(LCmainpic.jpg); background-size: cover;filter: blur(0px);">
+
     <header>
-<nav>
-  
-<a href="index.html">HomePage</a>  <!--this allows the developer to make a link-->
-<a href="about.html">About US</a>
-<a href="contact.html">Contact Us</a>
-<a href="services.html">Our Menu</a>
-<a href="gallery.html">Our Gallery</a>
-</nav>
-
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HomePage</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Our Menu</a></li>
+                <li><a href="gallery.html">Our Gallery</a></li>
+            </ul>
+            <div class="indicator"></div>
+        </nav>
     </header>
+
     <main>
-<h1>
-For any inquiries,you can:
-</h1>
-<li>
-Call us at:066 061 7450 </li>
- <li>Email us at:localchillas@gmail.com
- </li>
- <h2>
-For bookings:
- </h2>
- WHATSAPP:073 140 2474
-or
- CALL:066 061 7450
-or
-EMAIL:localchillas@gmail.com
+        <h1>For any inquiries, you can:</h1>
+        <ul>
+            <li>Call us at: 066 061 7450</li>
+            <li>Email us at: localchillas@gmail.com</li>
+        </ul>
 
-<h2>For information visit:</h2>
-<li>
-<a href="www.localchillas.co.za"></a> </li> <!--a href allows the developer to make a link-->
+        <h2>For bookings:</h2>
+        <p>WHATSAPP: 073 140 2474 <br>
+        CALL: 066 061 7450 <br>
+        EMAIL: localchillas@gmail.com</p>
 
-<BOX>
-<section class="contact-form section"> <!--this tag allows the form to have its own section-->
+        <h2>For information visit:</h2>
+        <p><a href="https://www.localchillas.co.za">www.localchillas.co.za</a></p>
 
-<h2>CONTACT US:</h2>
+        <div class="contact-form-wrapper">
+            <section class="contact-form section">
+                <h2>CONTACT US:</h2>
+                <form class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter name"><br>
 
-<form class="contact-form"> <!--this tag allows the developer to make a form-->
-    <br>
-    
-<label for="Name">Name</label>
-<input type="name" id="name" name="name" placeholder="enter name"> <!--this tag allows the developer to label his/her buttons or anything that needs to be labeled-->
-<br>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email"><br>
 
-<label for="email">Email</label>
-<input type="email" id="email" name="email" placeholder="enter email">
-<br>
+                    <label for="contact">Contact</label>
+                    <input type="text" id="contact" name="contact" placeholder="Enter your contact"><br>
 
-<label for="contact">Contact</label>
-<input type="contact" id="contact" name="contact" placeholder="enter your contact">
-<br>
+                    <button type="submit">SEND</button><br>
 
-<button type="submit">SEND</button> <!--this tag allows the developer to make a clickable button-->
-<br>
-<h4>If you are interested in working us click the "interested" button
-    <br>we'll contact you for more information </h4>
-
-<button type="submit">Interested</button>
-
-
-</form>
-</BOX>
-
-</section>
-
-
-
-
-
+                    <h4>If you are interested in working with us, click the "Interested" button. We'll contact you for more information.</h4>
+                    <button type="button">Interested</button>
+                </form>
+            </section>
+        </div>
     </main>
-    
-</body>
-<hr>
-<footer>
-<h5>LOCAL CHILLAS&COPY;2026 created by ANDISWA NDLANGAMANDLA</h5> <!--this is to show other developers that this was made by another developer-->
 
+</div>
+
+<hr>
+
+<footer>
+    <h5>LOCAL CHILLAS &copy; 2026 created by ANDISWA NDLANGAMANDLA</h5>
 </footer>
+
+</body>
 </html>

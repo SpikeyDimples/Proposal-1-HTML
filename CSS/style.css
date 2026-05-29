@@ -1,0 +1,392 @@
+/* ===== LOCAL CHILLAS — style.css ===== */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Lato:wght@400;700&display=swap');
+
+/* ===== CSS Variables ===== */
+:root {
+    --green-dark:   #073025;
+    --green-mid:    #0a482a;
+    --green-light:  #17352d;
+    --sand:         #f5f0e6;
+    --sand-mid:     #d9c7a3;
+    --sand-light:   #eee6d5;
+    --white:        #ffffff;
+    --black:        #111111;
+    --shadow-green: rgba(7, 48, 37, 0.25);
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    background-color: var(--sand);
+    color: var(--green-dark);
+    line-height: 1.6;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+    font-family: 'Oswald', Arial, sans-serif;
+    text-align: center;
+    color: var(--green-dark);
+    letter-spacing: 0.04em;
+}
+
+h1 { font-size: 2rem;   margin-bottom: 20px; }
+h2 { font-size: 1.4rem; margin-bottom: 14px; }
+h3 { font-size: 1.2rem; margin-bottom: 12px; }
+h4 { font-size: 1rem;   margin-bottom: 10px; }
+
+h5 {
+    font-family: 'Lato', Arial, sans-serif;
+    text-align: center;
+    color: var(--sand);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ===== Page Wrapper ===== */
+.box {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: var(--white);
+    padding: 14px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px var(--shadow-green);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: var(--green-dark);
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s, border-color 0.25s;
+}
+
+.navbar li a:hover {
+    color: var(--green-mid);
+    border-bottom-color: var(--sand-mid);
+}
+
+/* ===== Horizontal Rule ===== */
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--green-dark);
+    margin: 32px 0;
+    opacity: 0.25;
+}
+
+/* ===== Marquee / Welcome Banner ===== */
+.marquee {
+    background-color: var(--green-dark);
+    padding: 12px 0;
+    margin-top: 14px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.marquee h1 {
+    color: var(--sand);
+    font-size: 1.5rem;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+/* ===== Hero Image ===== */
+.box > img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: block;
+}
+
+/* ===== About Page — inline images ===== */
+main img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 16px 0;
+    border: 2px solid var(--sand-mid);
+    display: block;
+}
+
+/* ===== Gallery Sections ===== */
+section {
+    margin-bottom: 40px;
+}
+
+section h3 {
+    font-size: 1.1rem;
+    color: var(--green-dark);
+    text-align: left;
+    padding-left: 4px;
+    border-left: 4px solid var(--green-mid);
+    margin-bottom: 14px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid var(--sand-mid);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin: 0;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 24px var(--shadow-green);
+}
+
+/* ===== Menu Tables ===== */
+.menu-table,
+.vip-table {
+    width: 80%;
+    margin: 0 auto 28px;
+    border-collapse: collapse;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px var(--shadow-green);
+}
+
+/* Headers */
+.menu-table th,
+.vip-table th {
+    padding: 12px 20px;
+    background-color: var(--green-dark);
+    color: var(--sand);
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.vip-table th {
+    background-color: var(--green-mid);
+    text-align: center;
+}
+
+/* Cells */
+.menu-table td,
+.vip-table td {
+    padding: 11px 20px;
+    font-size: 15px;
+    border-bottom: 1px solid var(--sand-mid);
+    color: var(--green-dark);
+}
+
+.vip-table td {
+    background-color: var(--sand);
+    text-align: center;
+}
+
+/* Last row — no divider */
+.menu-table tr:last-child td,
+.vip-table tr:last-child td {
+    border-bottom: none;
+    font-weight: 700;
+}
+
+/* Row hover */
+.menu-table tbody tr:hover td,
+.vip-table tbody tr:hover td {
+    background-color: var(--sand-light);
+    transition: background-color 0.2s ease;
+}
+
+/* ===== Contact Page ===== */
+.contact-form-wrapper {
+    margin-top: 30px;
+}
+
+.contact-form {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 4px 16px var(--shadow-green);
+    max-width: 560px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-form h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.contact-form label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 2px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--sand-mid);
+    border-radius: 6px;
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 15px;
+    color: var(--green-dark);
+    background-color: var(--sand);
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+.contact-form input:focus {
+    border-color: var(--green-mid);
+    background-color: var(--white);
+}
+
+/* ===== Buttons ===== */
+button,
+.contact-form button {
+    background-color: var(--green-dark);
+    color: var(--sand);
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 11px 26px;
+    border: 2px solid var(--green-dark);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.25s, color 0.25s, transform 0.15s;
+}
+
+button:hover {
+    background-color: var(--green-mid);
+    border-color: var(--green-mid);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button[type="button"] {
+    background-color: transparent;
+    color: var(--green-dark);
+    border-color: var(--green-dark);
+    margin-top: 6px;
+}
+
+button[type="button"]:hover {
+    background-color: var(--green-dark);
+    color: var(--sand);
+}
+
+/* ===== Contact Info Text ===== */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px auto;
+    max-width: 420px;
+    text-align: center;
+}
+
+main ul li {
+    padding: 6px 0;
+    font-size: 16px;
+}
+
+main p {
+    text-align: center;
+    font-size: 15px;
+    margin: 8px auto;
+    max-width: 480px;
+}
+
+main a {
+    color: var(--green-mid);
+    font-weight: 700;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--green-dark);
+    color: var(--sand);
+    text-align: center;
+    padding: 16px 0;
+    margin-top: 48px;
+}
+
+footer h5 {
+    color: var(--sand);
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .menu-table,
+    .vip-table {
+        width: 100%;
+    }
+
+    .menu-table th,
+    .menu-table td,
+    .vip-table th,
+    .vip-table td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+
+    .contact-form {
+        padding: 20px 16px;
+    }
+}
