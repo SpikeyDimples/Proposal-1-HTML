@@ -398,3 +398,7 @@ footer h5 {
     width: 0;
     transition: width 0.3s ease;
 }
+.navbar li a.active {
+    border-bottom: 2px solid var(--green-dark);
+    color: var(--green-mid);
+}
