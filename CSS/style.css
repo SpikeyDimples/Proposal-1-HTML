@@ -12,6 +12,7 @@
     --sand-light:   #eee6d5;
     --white:        #ffffff;
     --black:        #111111;
+    --error:        #c0392b;
     --shadow-green: rgba(7, 48, 37, 0.25);
 }
 
@@ -63,6 +64,7 @@ h5 {
     padding: 14px 24px;
     border-radius: 8px;
     box-shadow: 0 4px 16px var(--shadow-green);
+    position: relative;
 }
 
 .navbar ul {
@@ -401,4 +403,192 @@ footer h5 {
 .navbar li a.active {
     border-bottom: 2px solid var(--green-dark);
     color: var(--green-mid);
+}
+
+/* =========================================================
+   ADDED — Dropdown menu ("Our Menu")
+   ========================================================= */
+.navbar li.has-dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--green-dark);
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s, border-color 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.navbar .dropdown-toggle:hover,
+.navbar .dropdown-toggle.active {
+    color: var(--green-mid);
+    border-bottom-color: var(--sand-mid);
+}
+
+.caret {
+    font-size: 0.6rem;
+    transition: transform 0.2s ease;
+}
+
+.has-dropdown.open .caret {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    background-color: var(--white);
+    list-style: none;
+    padding: 8px 0;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px var(--shadow-green);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    z-index: 30;
+}
+
+.has-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 18px;
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: normal;
+    border-bottom: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--sand-light);
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        margin-top: 6px;
+    }
+    .has-dropdown.open .dropdown-menu {
+        display: block;
+    }
+}
+
+/* =========================================================
+   ADDED — Homepage hero slider
+   ========================================================= */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.hero-slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.hero-slide {
+    flex: 0 0 100%;
+}
+
+.hero-slide img {
+    width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-slider .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(245, 240, 230, 0.85);
+    color: var(--green-dark);
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.hero-slider .slider-btn.prev { left: 14px; }
+.hero-slider .slider-btn.next { right: 14px; }
+
+.hero-slider .slider-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hero-slider .slider-dots .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: rgba(245, 240, 230, 0.55);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hero-slider .slider-dots .dot.active {
+    background-color: var(--sand);
+}
+
+/* =========================================================
+   ADDED — Contact form validation states
+   ========================================================= */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-form input.invalid {
+    border-color: var(--error);
+}
+
+.error-message {
+    display: block;
+    color: var(--error);
+    font-size: 13px;
+    min-height: 1em;
+}
+
+.form-success {
+    color: var(--green-mid);
+    font-weight: 700;
+    text-align: center;
 }

@@ -15,7 +15,23 @@
             <li><a href="index.html">HomePage</a></li>
             <li><a href="about.html">About US</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="services.html" class="active">Our Menu</a></li>
+            <li class="has-dropdown">
+                <button type="button" class="dropdown-toggle active" aria-haspopup="true" aria-expanded="false">
+                    Our Menu <span class="caret">&#9662;</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="services.html">View Full Menu</a></li>
+                    <li><a href="services.html#food">Food</a></li>
+                    <li><a href="services.html#drinks">Drinks</a></li>
+                    <li><a href="services.html#light-meals">Light Meals</a></li>
+                    <li><a href="services.html#ciders">Ciders</a></li>
+                    <li><a href="services.html#shots">Shots</a></li>
+                    <li><a href="services.html#cocktails">Cocktails</a></li>
+                    <li><a href="services.html#hookah">Hookah</a></li>
+                    <li><a href="services.html#big-money">Big Money Special</a></li>
+                    <li><a href="services.html#vip-packages">VIP Packages</a></li>
+                </ul>
+            </li>
             <li><a href="gallery.html">Our Gallery</a></li>
         </ul>
         <div class="indicator"></div>
@@ -27,7 +43,7 @@
 <main>
 <h1>WHAT WE OFFER AT LOCAL CHILLAS</h1>
 
-<h2 style="text-align:center;">FOOD MENU:</h2>
+<h2 id="food" style="text-align:center;">FOOD MENU:</h2>
 <table class="menu-table">
     <tr>
         <th>Menu</th>
@@ -63,7 +79,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;">DRINKS:</h2>
+<h2 id="drinks" style="text-align:center;">DRINKS:</h2>
 <table class="menu-table">
     <tr>
         <th>Menu</th>
@@ -79,7 +95,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;">LIGHT MEALS:</h2>
+<h2 id="light-meals" style="text-align:center;">LIGHT MEALS:</h2>
 <table class="menu-table">
     <tr>
         <th>Menu</th>
@@ -103,7 +119,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;">DRINKS:</h2>
+<h2 id="ciders" style="text-align:center;">DRINKS:</h2>
 <table class="menu-table">
     <tr>
         <th>Menu</th>
@@ -115,7 +131,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;">SHOTS:</h2>
+<h2 id="shots" style="text-align:center;">SHOTS:</h2>
 <table class="menu-table">
     <tr>
         <th>Shots</th>
@@ -131,7 +147,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;">COCKTAILS:</h2>
+<h2 id="cocktails" style="text-align:center;">COCKTAILS:</h2>
 <table class="menu-table">
     <tr>
         <th>Cocktails</th>
@@ -147,7 +163,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;">HOOKAH:</h2>
+<h2 id="hookah" style="text-align:center;">HOOKAH:</h2>
 <table class="menu-table">
     <tr>
         <th>Hookah</th>
@@ -163,7 +179,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;">BIG MONEY SPECIAL:</h2>
+<h2 id="big-money" style="text-align:center;">BIG MONEY SPECIAL:</h2>
 <table class="menu-table">
     <tr>
         <th>Bottles</th>
@@ -183,7 +199,7 @@
     </tr>
 </table>
 
-<h2 style="text-align:center;"><i>VIP PACKAGES:</i></h2>
+<h2 id="vip-packages" style="text-align:center;"><i>VIP PACKAGES:</i></h2>
 <table class="vip-table">
     <tr>
         <th>Bronze Package</th>
@@ -220,5 +236,6 @@
 <h5>LOCAL CHILLAS &copy; 2026 created by ANDISWA NDLANGAMANDLA</h5>
 </footer>
 
+<script src="JS/script.js"></script>
 </body>
 </html>
