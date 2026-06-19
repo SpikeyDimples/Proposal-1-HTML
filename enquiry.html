@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCAL CHILLAS — Enquiry</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+<div class="box">
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HomePage</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="has-dropdown">
+                    <button type="button" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Our Menu <span class="caret">&#9662;</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html">View Full Menu</a></li>
+                        <li><a href="services.html#food">Food</a></li>
+                        <li><a href="services.html#drinks">Drinks</a></li>
+                        <li><a href="services.html#light-meals">Light Meals</a></li>
+                        <li><a href="services.html#ciders">Ciders</a></li>
+                        <li><a href="services.html#shots">Shots</a></li>
+                        <li><a href="services.html#cocktails">Cocktails</a></li>
+                        <li><a href="services.html#hookah">Hookah</a></li>
+                        <li><a href="services.html#big-money">Big Money Special</a></li>
+                        <li><a href="services.html#vip-packages">VIP Packages</a></li>
+                    </ul>
+                </li>
+                <li><a href="gallery.html">Our Gallery</a></li>
+                <li><a href="enquiry.html" class="active">Enquiry</a></li>
+            </ul>
+            <div class="indicator"></div>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <h1>MAKE AN ENQUIRY</h1>
+        <p>Fill in the form below and we will respond with relevant information based on your enquiry type.</p>
+
+        <div class="contact-form-wrapper">
+            <section class="contact-section">
+
+                <form class="contact-form" id="enquiryForm" novalidate>
+
+                    <div class="form-group">
+                        <label for="enq-name">Full Name</label>
+                        <input type="text" id="enq-name" name="name" placeholder="Enter your full name">
+                        <span class="error-message" id="enq-name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enq-email">Email</label>
+                        <input type="email" id="enq-email" name="email" placeholder="Enter your email">
+                        <span class="error-message" id="enq-email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enq-contact">Contact Number</label>
+                        <input type="text" id="enq-contact" name="contact" placeholder="Enter your contact number">
+                        <span class="error-message" id="enq-contact-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enq-type">Enquiry Type</label>
+                        <select id="enq-type" name="enquiry-type">
+                            <option value="">-- Select an enquiry type --</option>
+                            <option value="services">Services & Pricing</option>
+                            <option value="vip">VIP & Packages</option>
+                            <option value="volunteer">Volunteering</option>
+                            <option value="sponsor">Sponsorship</option>
+                        </select>
+                        <span class="error-message" id="enq-type-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="enq-message">Your Message</label>
+                        <textarea id="enq-message" name="message" rows="4" placeholder="Tell us more about your enquiry..."></textarea>
+                        <span class="error-message" id="enq-message-error"></span>
+                    </div>
+
+                    <button type="submit">SUBMIT ENQUIRY</button>
+
+                </form>
+
+                <div id="enquiryResponse" class="enquiry-response" hidden>
+                    <h3 id="responseTitle"></h3>
+                    <p id="responseBody"></p>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+</div>
+
+<hr>
+
+<footer>
+    <h5>LOCAL CHILLAS &copy; 2026 created by ANDISWA NDLANGAMANDLA</h5>
+</footer>
+
+<script src="JS/script.js"></script>
+</body>
+</html>

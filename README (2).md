@@ -41,4 +41,18 @@ for my about page
 you will see the pictures of breyten and information/background about local chillas
 
 
+#LOCAL CHILLAS PART3
+
+
+THIS IS PART 3 FOR MY LOCAL CHILLAS WEBSITE,THSI PART ENSURES THE USERS EXPERIENCE AND INTERACTION WITH THE WEBSITE IS GOOD.
+
+This is where i added java for my website i added for the homepage,the contact page and for all the other pages
+
+for all of the pages a dropdown navigation was added
+
+and for the hompeage i made the hero image a slider
+
+and for the contact page i added contact validation and i added functionality foe the "interested" button
+
+
 

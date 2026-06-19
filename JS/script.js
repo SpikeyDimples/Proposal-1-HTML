@@ -152,14 +152,28 @@
     const allValid = results.every(Boolean);
 
     if (allValid) {
-      // Hook your real submission here, e.g.:
-      // fetch('your-endpoint-or-form-service', { method: 'POST', body: new FormData(form) })
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
       successMsg.hidden = false;
       form.reset();
     } else {
-      const firstInvalid = Object.values(fields).find((f) => f.input.classList.contains('invalid'));
-      if (firstInvalid) firstInvalid.input.focus();
+      alert('Something went wrong. Please try again.');
     }
+  })
+  .catch(() => {
+    alert('Could not send message. Please check your internet connection.');
+  });
+} else {
+  const firstInvalid = Object.values(fields).find((f) => f.input.classList.contains('invalid'));
+  if (firstInvalid) firstInvalid.input.focus();
+}
   });
 })();
 /* ---------- 4. "Interested" button ---------- */
@@ -175,5 +189,129 @@
     btn.disabled = true;
     btn.style.opacity = '0.6';
     btn.style.cursor = 'default';
+  });
+})();
+/* ---------- 5. Enquiry form ---------- */
+(function () {
+  const form = document.getElementById('enquiryForm');
+  if (!form) return; // only on enquiry.html
+
+  const responseBox   = document.getElementById('enquiryResponse');
+  const responseTitle = document.getElementById('responseTitle');
+  const responseBody  = document.getElementById('responseBody');
+
+  // What we say back based on enquiry type
+  const responses = {
+    services: {
+      title: 'Services & Pricing Enquiry',
+      body: 'Thank you for your interest! We offer food, drinks, hookah, and entertainment packages. Our pricing starts from R25 for light meals up to R1800+ for VIP packages. Please check our full menu page for detailed pricing, or we will follow up with you directly.',
+    },
+    vip: {
+      title: 'VIP & Packages Enquiry',
+      body: 'Great choice! Our VIP packages start from R800 (Bronze) and go up to R1800+ (Gold), including reserved seating, bottles, and mixers. We will contact you to confirm availability and discuss your preferred date.',
+    },
+    volunteer: {
+      title: 'Volunteering Enquiry',
+      body: 'We love community involvement! Volunteering opportunities are available for events and operations. We will reach out to you with more details about current openings and requirements.',
+    },
+    sponsor: {
+      title: 'Sponsorship Enquiry',
+      body: 'Thank you for considering sponsoring Local Chillas! We offer brand visibility at events and on our platforms. A member of our team will contact you to discuss sponsorship packages and benefits.',
+    },
+  };
+
+  const fields = {
+    name: {
+      input: document.getElementById('enq-name'),
+      error: document.getElementById('enq-name-error'),
+      validate: (v) => v.trim() === '' ? 'Please enter your full name.' : '',
+    },
+    email: {
+      input: document.getElementById('enq-email'),
+      error: document.getElementById('enq-email-error'),
+      validate: (v) => {
+        if (v.trim() === '') return 'Please enter your email.';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Please enter a valid email address.';
+        return '';
+      },
+    },
+    contact: {
+      input: document.getElementById('enq-contact'),
+      error: document.getElementById('enq-contact-error'),
+      validate: (v) => {
+        if (v.trim() === '') return 'Please enter your contact number.';
+        if (v.replace(/\D/g, '').length < 7) return 'Please enter a valid contact number.';
+        return '';
+      },
+    },
+    type: {
+      input: document.getElementById('enq-type'),
+      error: document.getElementById('enq-type-error'),
+      validate: (v) => v === '' ? 'Please select an enquiry type.' : '',
+    },
+    message: {
+      input: document.getElementById('enq-message'),
+      error: document.getElementById('enq-message-error'),
+      validate: (v) => v.trim() === '' ? 'Please enter a message.' : '',
+    },
+  };
+
+  function validateField(field) {
+    const errorText = field.validate(field.input.value);
+    field.input.classList.toggle('invalid', Boolean(errorText));
+    field.error.textContent = errorText;
+    return errorText === '';
+  }
+
+  Object.values(fields).forEach((field) => {
+    field.input.addEventListener('blur', () => validateField(field));
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    responseBox.hidden = true;
+
+    const allValid = Object.values(fields).map(validateField).every(Boolean);
+
+    if (allValid) {
+      const type = fields.type.input.value;
+      const res  = responses[type];
+
+      responseTitle.textContent = res.title;
+      responseBody.textContent  = res.body;
+      responseBox.hidden = false;
+      responseBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      form.reset();
+    } else {
+      const first = Object.values(fields).find((f) => f.input.classList.contains('invalid'));
+      if (first) first.input.focus();
+    }
+  });
+})();
+
+/* ---------- 6. Menu search/filter ---------- */
+(function () {
+  const searchInput = document.getElementById('menuSearch');
+  if (!searchInput) return; // only on services.html
+
+  const sections = document.querySelectorAll('.menu-section');
+  const noResults = document.getElementById('menuNoResults');
+
+  searchInput.addEventListener('input', function () {
+    const query = this.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    sections.forEach((section) => {
+      const text = section.textContent.toLowerCase();
+      if (query === '' || text.includes(query)) {
+        section.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        section.classList.add('hidden');
+      }
+    });
+
+    noResults.hidden = visibleCount > 0;
   });
 })();
