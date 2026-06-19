@@ -162,3 +162,18 @@
     }
   });
 })();
+/* ---------- 4. "Interested" button ---------- */
+(function () {
+  const btn = document.getElementById('interestedBtn');
+  if (!btn) return;
+
+  const successMsg = document.getElementById('interestedSuccess');
+
+  btn.addEventListener('click', function () {
+    successMsg.hidden = false;
+    btn.textContent = 'NOTED!';
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    btn.style.cursor = 'default';
+  });
+})();
