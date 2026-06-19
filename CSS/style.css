@@ -675,3 +675,21 @@ footer h5 {
     display:none;
     padding:15px;
 }
+.tabs{
+    margin:20px 0;
+}
+
+.tab-btn{
+    padding:10px 20px;
+    cursor:pointer;
+    margin-right:5px;
+}
+
+.tab-content{
+    padding:15px;
+    margin-top:10px;
+}
+
+.tab-btn.active{
+    font-weight:bold;
+}
