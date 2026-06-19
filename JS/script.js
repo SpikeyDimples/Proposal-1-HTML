@@ -365,3 +365,23 @@ accordions.forEach(item => {
     });
 
 });
+const tabButtons = document.querySelectorAll('.tab-btn');
+
+tabButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.style.display = 'none';
+        });
+
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        document.getElementById(button.dataset.tab).style.display = 'block';
+
+        button.classList.add('active');
+    });
+
+});
