@@ -665,3 +665,13 @@ footer h5 {
     color:white;
     cursor:pointer;
 }
+.accordion{
+    width:100%;
+    padding:15px;
+    cursor:pointer;
+}
+
+.panel{
+    display:none;
+    padding:15px;
+}
